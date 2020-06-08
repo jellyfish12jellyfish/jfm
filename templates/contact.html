@@ -1,56 +1,29 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/form.js') }}"></script>
+
 </head>
-<body onload="getTimeZone()">
-<div class="container">
-    <h1>Contact</h1>
-    <h2><a href="{{ url_for('index') }}">Go to the main page</a></h2>
+<body>
+<form>
+    <label for="nameInput">Name</label>
+    <input type="text" id="nameInput" name="name">
 
+    <label for="emailInput">Email</label>
+    <input type="email" id="emailInput" name="email">
 
-    {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            {% for message in messages %}
-                {{ message }}
-            {% endfor %}
-        {% endif %}
-    {% endwith %}
+    <label for="msgInput">Message</label>
+    <input type="text" id="msgInput" name="msg">
 
-
-    <form action="." method="post">
-
-        {{ form.csrf_token }}
-        <p hidden>{{ form.tz }}</p>
-
-        {% for field in form if field.name != 'csrf_token' %}
-            {% if field.name == 'tz' %}
-                {{ field.name|replace(field.name, "") }}
-            {% else %}
-                <p>{{ field.label() }}</p>
-                <p>{{ field }}
-                    {% for error in field.errors %}
-                        {{ error }}
-                    {% endfor %}
-                </p>
-            {% endif %}
-        {% endfor %}
-
-        <button type="submit" class="btn">Submit</button>
-    </form>
-
-</div>
-<script type="text/javascript">
-
-    let tz = document.getElementById("tz");
-
-    function getTimeZone() {
-        tz.value = (Intl.DateTimeFormat().resolvedOptions().timeZone)
-    }
-
-</script>
-
+    <button type="submit">Submit</button>
+</form>
+<div id="successAlert" class="alert alert-success" role="alert" style="display:none;"></div>
+<div id="errorAlert" class="alert alert-danger" role="alert" style="display:none;"></div>
 </body>
 </html>

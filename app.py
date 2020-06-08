@@ -1,11 +1,10 @@
 import secrets
 
 from flask import Flask
-from flask import render_template, flash, redirect, url_for
+from flask import render_template, flash, redirect, url_for, request, jsonify
 from flask_mail import Mail, Message
 
 import cfg
-from forms import ContactForm
 
 app = Flask(__name__)
 
@@ -24,26 +23,23 @@ app.config["RECAPTCHA_PRIVATE_KEY"] = cfg.pk
 mail = Mail(app)
 
 
-@app.route('/', methods=['get', 'post'])
+@app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('contact.html')
 
 
-@app.route('/contact/', methods=['get', 'post'])
-def contact():
-    form = ContactForm()
-    if form.validate_on_submit():
-        tz = form.tz.data
-        name = form.name.data
-        email = form.email.data
-        message = form.message.data
-        msg = Message(f'{name} leave you message', sender=email,
-                      recipients=['grinvichforum10@mail.ru'])
-        msg.html = f'{email}: <h3>{message}</h3> <br> {tz}'
-        mail.send(msg)
-        flash('Success!', category='success')
-        return redirect(url_for('contact'))
-    return render_template('contact.html', form=form)
+@app.route('/process', methods=['POST'])
+def process():
+    email = request.form['email']
+    name = request.form['name']
+    msg = request.form['msg']
+
+    if name and email and msg:
+        print(name)
+        print(email)
+        print(msg)
+        return jsonify({'success': 'Suk'})
+    return jsonify({'error': 'Missing data!'})
 
 
 # debug
