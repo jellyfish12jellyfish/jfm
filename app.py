@@ -1,7 +1,7 @@
 import secrets
 
 from flask import Flask
-from flask import render_template
+from flask import render_template, flash, redirect, url_for
 from flask_mail import Mail, Message
 
 import cfg
@@ -41,7 +41,8 @@ def contact():
                       recipients=['grinvichforum10@mail.ru'])
         msg.html = f'{email}: <h3>{message}</h3> <br> {tz}'
         mail.send(msg)
-        return render_template('success.html')
+        flash('Success!', category='success')
+        return redirect(url_for('contact'))
     return render_template('contact.html', form=form)
 
 
