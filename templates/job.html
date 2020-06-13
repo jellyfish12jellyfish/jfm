@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <main class="page hire-me-page">
+        <section class="portfolio-block photography">
+            <h2 class="text-center mytxt">Несколько скриншотов проекта</h2>
+            <div class="container">
+                <div class="row no-gutters">
+                    <div class="d-flex flex-column bd-highlight mb-2 myshadow">
+                        <div class="p-2 bd-highlight"><img class="myImg"
+                                                           src="{{ url_for ('static', filename='img/page1.png') }}"
+                                                           alt="first page"></div>
+                        <div class="p-2 bd-highlight"><img class="myImg"
+                                                           src="{{ url_for ('static', filename='img/page2.png') }}"
+                                                           alt="second page"></div>
+                        <div class="p-2 bd-highlight"><img class="myImg"
+                                                           src="{{ url_for ('static', filename='img/page3.png') }}"
+                                                           alt="third page"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock %}

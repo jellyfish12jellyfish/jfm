@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    Проекты
+{% endblock %}
+
+{% block content %}
+
+    <main class="page projects-page">
+        <section class="portfolio-block projects-cards">
+            <div class="container">
+                <!-- Start: portfolio heading -->
+                <div class="heading">
+                    <h2>Последние работы</h2>
+                </div>
+                <!-- End: portfolio heading -->
+                <div class="row">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card border-0"><a href="{{ url_for('get_job') }}"><img
+                                class="card-img-top scale-on-hover"
+                                src="{{ url_for('static', filename='img/page1.png') }}"
+                                alt="Card Image"></a>
+                            <div class="card-body">
+                                <h6><a href="#">Блочная верстка</a></h6>
+                                <p class="text-muted card-text">Минималистичный проект с легким дизайном</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card border-0"><a href="#"><img class="card-img-top scale-on-hover"
+                                                                    src="{{ url_for('static', filename='img/soon.png') }}"
+                                                                    alt="Card Image"></a>
+                            <div class="card-body">
+                                <h6><a href="#">Работа отсутствует</a></h6>
+                                <p class="text-muted card-text">Это место еще пустует :)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card border-0"><a href="#"><img class="card-img-top scale-on-hover"
+                                                                    src="{{ url_for('static', filename='img/soon.png') }}"
+                                                                    alt="Card Image"></a>
+                            <div class="card-body">
+                                <h6><a href="#">Работа отсутствует</a></h6>
+                                <p class="text-muted card-text">Это место еще пустует :)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock %}

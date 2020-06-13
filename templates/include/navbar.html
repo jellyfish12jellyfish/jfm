@@ -1,0 +1,17 @@
+<nav class="navbar navbar-dark navbar-expand-lg fixed-top portfolio-navbar gradient">
+    <div class="container"><a class="navbar-brand logo" href="{{ url_for('index') }}">Портфолио</a>
+        <button data-toggle="collapse"
+                class="navbar-toggler" data-target="#navbarNav"><span class="sr-only">Toggle navigation</span><span
+                class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item" role="presentation"><a class="nav-link" href="/">Главная</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link active"
+                                                            href="{{ url_for('get_projects') }}">Проекты</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="{{ url_for('get_team') }}">Наша команда</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="{{ url_for('get_contact') }}">Связаться с
+                    нами</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>

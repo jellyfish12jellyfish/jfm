@@ -1,0 +1,39 @@
+.fullscreen {
+    display: flex;
+    padding: 20px 0;
+}
+
+.fullscreen__body {
+    flex: 1 1 auto;
+    width: 100%;
+    max-width: 996px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+.content__body {
+    max-width: 996px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+.content__body p {
+    margin: 0 0 20px 0;
+}
+
+.myImg {
+    max-width: 100%;
+}
+
+.mytxt {
+    padding: 80px 0 40px 0;
+}
+
+.myshadow {
+    box-shadow: 0 0 14px 4px rgba(208, 207, 207, 0.85);
+    border-radius: 5px;
+}

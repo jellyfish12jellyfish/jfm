@@ -1,15 +1,104 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-<h1>Index</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam facere neque quis.</p>
-</form>
-</body>
-</html>
+{% extends 'base.html' %}
+{% block content %}
+
+    <main class="page lanidng-page">
+        <section class="portfolio-block block-intro">
+            <div class="container">
+                <div class="about-me">
+                    <p>Привет! Мы - молодая команда разработчиков.<br>Создаем лендинги, сайты</p><a
+                        class="btn btn-outline-primary" role="button" href="{{ url_for('get_contact') }}">Связаться с нами</a>
+                </div>
+            </div>
+        </section>
+        <section class="portfolio-block photography">
+            <div class="container">
+                <div class="row no-gutters">
+                    <div class="col-md-6 col-lg-4 item zoom-on-hover"><a href="{{ url_for('get_projects') }}"><img
+                            class="img-fluid image" src="{{ url_for('static', filename='img/page1.png') }}"></a></div>
+                    <div class="col-md-6 col-lg-4 item zoom-on-hover"><a href="#"><img class="img-fluid image"
+                                                                                       src="{{ url_for('static', filename='img/soon.png') }}"></a>
+                    </div>
+                    <div class="col"><img></div>
+                    <div class="col-md-6 col-lg-4 item zoom-on-hover"><a href="#"><img class="img-fluid image"
+                                                                                       src="{{ url_for('static', filename='img/soon.png') }}"/></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section
+                class="d-md-flex d-lg-flex justify-content-md-end align-items-md-center align-items-lg-center portfolio-block call-to-action border-bottom">
+            <div class="container">
+                <div class="d-flex justify-content-center align-items-center content">
+                    <h3>Проекты</h3>
+                    <a href="{{ url_for('get_contact') }}">
+                        <button class="btn btn-outline-primary btn-lg" type="button">Связаться снами</button>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section class="portfolio-block skills">
+            <div class="container">
+                <!-- Start: portfolio heading -->
+                <div class="heading">
+                    <h2>наши навыки</h2>
+                </div>
+                <!-- End: portfolio heading -->
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card special-skill-item border-0">
+                            <div class="card-header bg-transparent border-0"><i class="icon ion-ios-star-outline"></i>
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">Верстка страниц</h3>
+                                <p class="card-text">Мы готовы воплотить ваши идеи, дизайн, макет в реальность</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card special-skill-item border-0">
+                            <div class="card-header bg-transparent border-0"><i
+                                    class="icon ion-ios-lightbulb-outline"></i></div>
+                            <div class="card-body">
+                                <h3 class="card-title">Отзывчивость</h3>
+                                <p class="card-text">Мы готовы выслушать любые требования и помочь вам с решением
+                                    проблем</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card special-skill-item border-0">
+                            <div class="card-header bg-transparent border-0"><i class="icon ion-ios-gear-outline"></i>
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">Реализация логики сайта</h3>
+                                <p class="card-text">Мы стараемся постоянно развиваться и осваивать новые технологии.
+                                    Наши разработчики постараются помочь вам осуществить желаемый функционал :)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <section class="portfolio-block website gradient">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-12 col-lg-5 offset-lg-1 text">
+                    <h1 class="display-4 text-center">Наш проект</h1>
+                    <p class="text-center">Данный проект был создан с целью реализации и разработки веб-приложений. Мы
+                        всегда стараемся достичь чего-то большего, постоянно повышая свои знания</p>
+                </div>
+                <div class="col-md-12 col-lg-5">
+                    <div class="portfolio-laptop-mockup">
+                        <div class="screen">
+                            <div class="screen-content"
+                                 style="background-image:url({{ url_for('static', filename='/img/tech/our-project.png')}});">
+                            </div>
+                        </div>
+                        <div class="keyboard"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

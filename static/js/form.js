@@ -4,10 +4,10 @@ $(document).ready(function () {
 
         $.ajax({
             data: {
-                name: $('#nameInput').val(),
                 email: $('#emailInput').val(),
                 msg: $('#msgInput').val(),
-                number: $('#numberInput').val()
+                number: $('#numberInput').val(),
+                date:$('#hire-date').val()
             },
             type: 'POST',
             url: '/process'

@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    Связаться с нами
+{% endblock %}
+
+
+{% block content %}
+
+
+    <main class="page hire-me-page">
+        <section class="portfolio-block hire-me">
+            <div class="container">
+                <div class="heading">
+                    <h2>&nbsp;связаться с нами</h2>
+                </div>
+
+                <div id="successAlert" class="alert alert-success" role="alert" style="display:none; text-align: center;"></div>
+                <div id="errorAlert" class="alert alert-danger" role="alert" style="display:none; text-align: center;"></div>
+                <form>
+                    <div class="form-group">
+                        <label for="emailInput">Почта</label>
+                        <input onkeyup="success()" class="form-control" type="email" id="emailInput" name="email"
+                               required
+                               placeholder="Адрес электронной почты">
+                    </div>
+                    <div class="form-group">
+                        <label for="numberInput">Бюджет</label>
+                        <input class="form-control" type="number" name="number" id="numberInput"
+                               placeholder="Поле можно пропустить">
+                    </div>
+                    <div class="form-group">
+                        <label for="msgInput">Сообщение</label>
+                        <textarea onkeyup="success()" class="form-control" id="msgInput" required name="msg"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-md-6"><label for="hire-date">Дата</label><input class="form-control"
+                                                                                            id="hire-date" name="date"
+                                                                                            type="date">
+                            </div>
+                            <div class="col-md-6 button">
+                                <button disabled class="btn btn-primary btn-block" id="submit"
+                                        type="submit">&nbsp;Отправить
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+{% endblock %}

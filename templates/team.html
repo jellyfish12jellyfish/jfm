@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Наша команда
+{% endblock %}
+
+
+{% block content %}
+    <main class="page cv-page">
+        <section class="portfolio-block block-intro border-bottom">
+            <div class="container">
+                <div class="avatar"
+                     style="background-image:url({{ url_for('static', filename='/img/avatars/cat.jpg') }});"></div>
+                <div class="about-me">
+                    <p>Рады представить вам состав нашей команды</p><a class="btn btn-outline-primary" role="button"
+                                                                       href="{{ url_for('get_contact') }}">Свзяться с нами</a></div>
+            </div>
+        </section>
+        <section class="portfolio-block cv">
+            <div class="container">
+                <div class="work-experience group">
+                    <div class="heading">
+                        <h2 class="text-center">разработчики</h2>
+                    </div>
+                    <div class="item">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3>Игорь Данилов</h3>
+                                <h4 class="organization">Fronted-разработчик</h4>
+                            </div>
+                        </div>
+                        <p class="text-muted">Отвечает за интерфейс сайта и анимации, СЕО</p>
+                    </div>
+                    <div class="item">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3>Дмитрий Ион</h3>
+                                <h4 class="organization">Backend-разработчик</h4>
+                            </div>
+                        </div>
+                        <p class="text-muted">Отвечает за логику и функционал сайта</p>
+                    </div>
+                    <div class="item">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3>Одил Раматов</h3>
+                                <h4 class="organization">Backend-разработчик</h4>
+                            </div>
+                        </div>
+                        <p class="text-muted">Отвечает за логику и функционал сайта</p>
+                    </div>
+                </div>
+                <div class="group">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="skills portfolio-info-card">
+                                <h2>Технологии</h2>
+                                <h3>HTML/CSS</h3>
+                                <div class="progress">
+                                    <div class="progress-bar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"
+                                         style="width: 100%;"><span class="sr-only">100%</span></div>
+                                </div>
+                                <h3>Python (Django/Flask)</h3>
+                                <div class="progress">
+                                    <div class="progress-bar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                                         style="width: 60%;"><span class="sr-only">60%</span></div>
+                                </div>
+                                <h3>JavaScript (frontend, Node/Express js)</h3>
+                                <div class="progress">
+                                    <div class="progress-bar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                                         style="width: 60%;"><span class="sr-only">60%</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="contact-info portfolio-info-card">
+                                <h2 class="text-left">Контактная информация</h2>
+                                <div class="row">
+                                    <div class="col-1"><i class="icon ion-person icon"></i></div>
+                                    <div class="col-9"><span>Разработчики</span></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-1"><i class="icon ion-ios-telephone icon"></i></div>
+                                    <div class="col-9"><span>+ 7... (скоро...)</span></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-1"><i class="icon ion-at icon"></i></div>
+                                    <div class="col-9"><span>getinfo@mail.list</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hobbies group">
+                    <div class="heading">
+                        <h2 class="text-center">p.s.</h2>
+                    </div>
+                    <p class="text-center text-muted">Мы стараемся расиширить горизонт наших возможностей и все силы
+                        прикладываем для изучения новых технологий и их возможностей. Мы постараемся и дальше овладевать
+                        новыми знаниями и опытом, чтобы помочь вам</p>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock %}

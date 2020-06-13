@@ -25,30 +25,44 @@ mail = Mail(app)
 
 @app.route('/')
 def index():
-    return render_template('contact.html')
+    return render_template('index.html')
+
+
+@app.route('/projects')
+def get_projects():
+    return render_template('projects.html')
+
+
+@app.route('/team')
+def get_team():
+    return render_template('team.html')
+
+
+@app.route('/contact')
+def get_contact():
+    return render_template('contact_us.html')
+
+
+@app.route('/first-job')
+def get_job():
+    return render_template('job.html')
 
 
 @app.route('/process', methods=['POST'])
 def process():
     email = request.form['email']
-    name = request.form['name']
     msg = request.form['msg']
     number = request.form['number']
+    date = request.form['date']
 
-    if name and email and msg:
-        print(name)
-        print(email)
-        print(msg)
-        print(number)
-        message = Message(f'{name} send a message', sender=email, recipients=['grinvichforum10@mail.ru'])
-        message.html = f'<b>EMAIL:</b>{email} <br> <b>BUDGET:</b> {number} <br> <b>MESSAGE:</b> {msg}'
+    if email and msg:
+        message = Message(f'{email} send a message', sender=email, recipients=['grinvichforum10@mail.ru'])
+        message.html = f'<b>EMAIL:</b>{email} <br> <b>BUDGET:</b> {number} <br> <b>MESSAGE:</b> {msg}, <br> DATE: {date}'
         mail.send(message)
-        return jsonify({'success': 'Success!'})
-    return jsonify({'error': 'Missing data!'})
+        return jsonify({'success': 'Ваша форма успешно отправлена!'})
+    return jsonify(
+        {'error': 'Что-то пошло не так! Скорее всего, вы заполнили не все поля или ввели некорректные данные'})
 
 
-# debug
-# export FLASK_ENV=development
-# flask run
 if __name__ == '__main__':
     app.run()
