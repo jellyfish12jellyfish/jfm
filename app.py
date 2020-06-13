@@ -1,11 +1,10 @@
 import secrets
 
 from flask import Flask
-from flask import render_template, flash, redirect, url_for, request, jsonify
+from flask import render_template, request, jsonify
 from flask_mail import Mail, Message
 
 import cfg
-
 app = Flask(__name__)
 
 app.config['SECRET_KEY'] = secrets.token_urlsafe(16)
@@ -17,8 +16,8 @@ app.config.update(dict(
     MAIL_USERNAME=cfg.mail_user,
     MAIL_PASSWORD=cfg.mail_pass, ))
 
-app.config["RECAPTCHA_PUBLIC_KEY"] = cfg.pub
-app.config["RECAPTCHA_PRIVATE_KEY"] = cfg.pk
+# app.config["RECAPTCHA_PUBLIC_KEY"] = cfg.pub
+# app.config["RECAPTCHA_PRIVATE_KEY"] = cfg.pk
 
 mail = Mail(app)
 
