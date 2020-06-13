@@ -33,12 +33,17 @@ def process():
     email = request.form['email']
     name = request.form['name']
     msg = request.form['msg']
+    number = request.form['number']
 
     if name and email and msg:
         print(name)
         print(email)
         print(msg)
-        return jsonify({'success': 'Suk'})
+        print(number)
+        message = Message(f'{name} send a message', sender=email, recipients=['grinvichforum10@mail.ru'])
+        message.html = f'<b>EMAIL:</b>{email} <br> <b>BUDGET:</b> {number} <br> <b>MESSAGE:</b> {msg}'
+        mail.send(message)
+        return jsonify({'success': 'Success!'})
     return jsonify({'error': 'Missing data!'})
 
 

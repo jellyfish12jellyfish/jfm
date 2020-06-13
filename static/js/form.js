@@ -6,7 +6,8 @@ $(document).ready(function () {
             data: {
                 name: $('#nameInput').val(),
                 email: $('#emailInput').val(),
-                msg: $('#msgInput').val()
+                msg: $('#msgInput').val(),
+                number: $('#numberInput').val()
             },
             type: 'POST',
             url: '/process'
